@@ -23,6 +23,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\app.css" />
+    <Content Include="img\01.dodger\cockpitRed_2.png" />
+    <Content Include="img\01.dodger\cockpitYellow_0.png" />
     <Content Include="img\level1.png" />
     <Content Include="img\loader.png" />
     <Content Include="img\logo.png" />
@@ -30,23 +32,25 @@
     <Content Include="img\title.mp3" />
     <Content Include="img\titlepage.jpg" />
     <Content Include="index.html" />
-    <Content Include="scripts\phaser.js" />
-    <Content Include="scripts\phaser.min.js" />
+    <Content Include="scripts\old_code\main.js" />
+    <Content Include="scripts\old_code\simplex.js" />
+    <Content Include="scripts\vendor\phaser.js" />
+    <Content Include="scripts\vendor\phaser.min.js" />
     <Content Include="src\01dodger.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app.ts" />
-    <TypeScriptCompile Include="scripts\Boot.ts" />
-    <TypeScriptCompile Include="scripts\DodgerLevel.ts" />
-    <TypeScriptCompile Include="scripts\Game.ts" />
-    <TypeScriptCompile Include="scripts\Level1.ts" />
-    <TypeScriptCompile Include="scripts\MainMenu.ts" />
-    <TypeScriptCompile Include="scripts\p2.d.ts" />
-    <TypeScriptCompile Include="scripts\phaser.d.ts" />
-    <TypeScriptCompile Include="scripts\pixi.d.ts" />
-    <TypeScriptCompile Include="scripts\Player.ts" />
-    <TypeScriptCompile Include="scripts\Preloader.ts" />
+    <TypeScriptCompile Include="scripts\classes\Boot.ts" />
+    <TypeScriptCompile Include="scripts\classes\DodgerLevel.ts" />
+    <TypeScriptCompile Include="scripts\classes\Game.ts" />
+    <TypeScriptCompile Include="scripts\classes\Level1.ts" />
+    <TypeScriptCompile Include="scripts\classes\MainMenu.ts" />
+    <TypeScriptCompile Include="scripts\vendor\p2.d.ts" />
+    <TypeScriptCompile Include="scripts\vendor\phaser.d.ts" />
+    <TypeScriptCompile Include="scripts\vendor\pixi.d.ts" />
+    <TypeScriptCompile Include="scripts\classes\Player.ts" />
+    <TypeScriptCompile Include="scripts\classes\Preloader.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
