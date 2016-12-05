@@ -1,4 +1,4 @@
-﻿module PhaserGame {
+﻿namespace PhaserGame {
 
     export class MainMenu extends Phaser.State {
 

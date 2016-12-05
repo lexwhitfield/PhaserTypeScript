@@ -1,4 +1,4 @@
-﻿module PhaserGame {
+﻿namespace PhaserGame {
 
     export class Level1 extends Phaser.State {
 

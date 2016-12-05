@@ -1,7 +1,4 @@
-﻿import {PhaserCommon} from './scripts/common';
-let Common = new PhaserCommon.Functions();
-
-module PhaserGame {
+﻿namespace PhaserGame {  
 
     export enum MovementMode {
 
@@ -128,11 +125,15 @@ module PhaserGame {
 
         }
 
+        radians_to_degrees(a: number): number {
+            return a * 180 / Math.PI;
+        }
+
         mouse_and_keyboard() {
 
             // angleToPointer returns angle in radians (-1 to +1). this.angle expects angle in degrees
             // angleToPointer returns angle to the x-axis so -90 to offset 0 degrees to straight upwards
-            this.angle = Common.PhaserCommon.Functions.radians_to_degrees(this.game.physics.arcade.angleToPointer(this)) - 90;
+            this.angle = this.radians_to_degrees(this.game.physics.arcade.angleToPointer(this)) - 90;
 
             //TODO: figure out the math for strafing
 
@@ -162,8 +163,6 @@ module PhaserGame {
             // cap speed
 
         }
-
-        
 
     }
 

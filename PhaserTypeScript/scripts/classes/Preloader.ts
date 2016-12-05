@@ -1,4 +1,4 @@
-﻿module PhaserGame {
+﻿namespace PhaserGame {
 
     export class Preloader extends Phaser.State {
 
@@ -27,6 +27,7 @@
             // hand-off to the main menu
             this.game.state.start('MainMenu', true, false);
         }
+
     }
 
 }

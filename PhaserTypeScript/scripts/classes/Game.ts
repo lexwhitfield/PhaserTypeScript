@@ -1,8 +1,9 @@
 ﻿// http://www.photonstorm.com/phaser/advanced-phaser-and-typescript-projects
 
-module PhaserGame {
+namespace PhaserGame {
 
     export class Game extends Phaser.Game {
+
         constructor() {
             super(1024, 768, Phaser.AUTO, 'content', null);
 
@@ -13,6 +14,7 @@ module PhaserGame {
 
             this.state.start('Boot');
         }
+
     }
 
 }

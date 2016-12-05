@@ -34,13 +34,13 @@ namespace Tutorials.Display.T2 {
         graphics1.clear();
         graphics1.lineStyle(2, 0xffffff);
         graphics1.beginFill(0x00bff3);
-        graphics1.arc(200, 300, 160, angle.min, Common.PhaserCommon.Functions.degrees_to_radians(angle.max), false);
+        graphics1.arc(200, 300, 160, angle.min, Common.Functions.degrees_to_radians(angle.max), false);
         graphics1.endFill();
 
         graphics2.clear();
         graphics2.lineStyle(2, 0xffffff);
         graphics2.beginFill(0xa000f3);
-        graphics2.arc(600, 300, 160, angle.min, Common.PhaserCommon.Functions.degrees_to_radians(angle.max), true);
+        graphics2.arc(600, 300, 160, angle.min, Common.Functions.degrees_to_radians(angle.max), true);
         graphics1.endFill();
 
     }

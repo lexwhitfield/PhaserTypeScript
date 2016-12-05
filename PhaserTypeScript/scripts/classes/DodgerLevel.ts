@@ -1,4 +1,4 @@
-﻿module PhaserGame {
+﻿namespace PhaserGame {
 
     export class DodgerLevel extends Phaser.State {
 
@@ -16,7 +16,7 @@
             this.enemies = [];
 
             for (var i = 0; i < 10; i++) {
-                
+
                 this.enemies.push(new Enemy(this.game, Math.floor(Math.random() * this.game.width), Math.floor(Math.random() * this.game.height)));
             }
 

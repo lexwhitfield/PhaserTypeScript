@@ -4,7 +4,7 @@ var PhaserGame;
         create() {
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.stage.backgroundColor = '#555555';
-            this.player = new Player(this.game, 512, 384, MovementMode.KEYBOARD_WASD);
+            this.player = new PhaserGame.Player(this.game, 512, 384, PhaserGame.MovementMode.KEYBOARD_WASD);
             this.enemies = [];
             for (var i = 0; i < 10; i++) {
                 this.enemies.push(new PhaserGame.Enemy(this.game, Math.floor(Math.random() * this.game.width), Math.floor(Math.random() * this.game.height)));

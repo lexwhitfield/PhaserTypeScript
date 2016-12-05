@@ -1,4 +1,4 @@
-﻿module PhaserGame {
+﻿namespace PhaserGame {
 
     export class Boot extends Phaser.State {
         preload() {
@@ -6,6 +6,7 @@
             // loading bar.
 
             this.load.image('preloadBar', '../img/loader.png');
+
         }
 
         create() {
@@ -24,7 +25,9 @@
 
             // hand over to the Preloader
             this.game.state.start('Preloader', true, false);
+
         }
+
     }
 
 }
