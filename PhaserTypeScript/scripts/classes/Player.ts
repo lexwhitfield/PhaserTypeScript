@@ -1,4 +1,7 @@
-﻿module PhaserGame {
+﻿import {PhaserCommon} from './scripts/common';
+let Common = new PhaserCommon.Functions();
+
+module PhaserGame {
 
     export enum MovementMode {
 
@@ -103,23 +106,24 @@
 
             // set movement speed by w, a, s and d keys
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-                this.body.velocity.x = -150;
-                this.scale.x = (this.scale.x == 1) ? -1 : this.scale.x;
+                // turn left
+                this.rotation += 0.1;
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.D)) {
-                this.body.velocity.x = 150;
-                this.scale.x = (this.scale.x == -1) ? 1 : this.scale.x;
+                // turn right
+                this.rotation -= 0.1;
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.W)) {
-                this.body.velocity.y = 150;
-                this.scale.y = (this.scale.y == -1) ? 1 : this.scale.y;
+                // move forward
+                this.game.physics.arcade.accelerationFromRotation(this.rotation, 5000, this.body.acceleration);
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.S)) {
-                this.body.velocity.y = -150;
-                this.scale.y = (this.scale.y == 1) ? -1 : this.scale.y;
+                // stop / move backwards
+                this.body.velocity.y = -Math.sin(this.angle) * this.MaxSpeed;
+                this.body.velocity.x = -Math.cos(this.angle) * this.MaxSpeed;
             }
 
         }
@@ -128,7 +132,7 @@
 
             // angleToPointer returns angle in radians (-1 to +1). this.angle expects angle in degrees
             // angleToPointer returns angle to the x-axis so -90 to offset 0 degrees to straight upwards
-            this.angle = this.radians_to_degrees(this.game.physics.arcade.angleToPointer(this)) - 90;
+            this.angle = Common.PhaserCommon.Functions.radians_to_degrees(this.game.physics.arcade.angleToPointer(this)) - 90;
 
             //TODO: figure out the math for strafing
 
@@ -159,13 +163,7 @@
 
         }
 
-        degrees_to_radians(a: number): number {
-            return a * Math.PI / 180;
-        }
-
-        radians_to_degrees(a: number): number {
-            return a * 180 / Math.PI;
-        }
+        
 
     }
 

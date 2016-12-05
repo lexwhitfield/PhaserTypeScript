@@ -60,15 +60,22 @@ var PhaserGame;
             _super.apply(this, arguments);
         }
         DodgerLevel.prototype.create = function () {
+            this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.stage.backgroundColor = '#555555';
-            this.player = new PhaserGame.Player(this.game, 130, 284, PhaserGame.MovementMode.MOUSE_AND_KEYBOARD);
+            this.player = new PhaserGame.Player(this.game, 512, 384, PhaserGame.MovementMode.KEYBOARD_WASD);
             this.enemies = [];
-            this.enemies.push(new PhaserGame.Enemy(this.game, 70, 120));
+            for (var i = 0; i < 10; i++) {
+                this.enemies.push(new PhaserGame.Enemy(this.game, Math.floor(Math.random() * this.game.width), Math.floor(Math.random() * this.game.height)));
+            }
         };
         DodgerLevel.prototype.update = function () {
+            for (var enemy in this.enemies) {
+                this.game.physics.arcade.collide(this.player, enemy);
+            }
         };
         DodgerLevel.prototype.render = function () {
             this.game.debug.inputInfo(32, 32);
+            this.game.debug.body(this.player);
         };
         return DodgerLevel;
     }(Phaser.State));
@@ -138,6 +145,13 @@ var PhaserGame;
     }(Phaser.State));
     PhaserGame.MainMenu = MainMenu;
 })(PhaserGame || (PhaserGame = {}));
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', { preload: preload, create: create });
+function preload() {
+    game.load.image('einstein', '/img/tutorials/ra_einstein.png');
+}
+function create() {
+    game.add.sprite(0, 0, 'einstein');
+}
 var PhaserGame;
 (function (PhaserGame) {
     (function (MovementMode) {
@@ -211,20 +225,21 @@ var PhaserGame;
         Player.prototype.keyboard_wasd = function () {
             // set movement speed by w, a, s and d keys
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-                this.body.velocity.x = -150;
-                this.scale.x = (this.scale.x == 1) ? -1 : this.scale.x;
+                // turn left
+                this.rotation += 0.1;
             }
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.D)) {
-                this.body.velocity.x = 150;
-                this.scale.x = (this.scale.x == -1) ? 1 : this.scale.x;
+                // turn right
+                this.rotation -= 0.1;
             }
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.W)) {
-                this.body.velocity.y = 150;
-                this.scale.y = (this.scale.y == -1) ? 1 : this.scale.y;
+                // move forward
+                this.game.physics.arcade.accelerationFromRotation(this.rotation, 5000, this.body.acceleration);
             }
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.S)) {
-                this.body.velocity.y = -150;
-                this.scale.y = (this.scale.y == 1) ? -1 : this.scale.y;
+                // stop / move backwards
+                this.body.velocity.y = -Math.sin(this.angle) * this.MaxSpeed;
+                this.body.velocity.x = -Math.cos(this.angle) * this.MaxSpeed;
             }
         };
         Player.prototype.mouse_and_keyboard = function () {

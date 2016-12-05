@@ -1,4 +1,3 @@
-﻿
-window.onload = () => {
+﻿window.onload = () => {
     var game = new PhaserGame.Game();
 };

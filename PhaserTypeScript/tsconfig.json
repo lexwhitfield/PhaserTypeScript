@@ -1,0 +1,16 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "declaration": false,
+    "jsx": "react",
+    "module": "system",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
