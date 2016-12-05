@@ -2,10 +2,15 @@
 
     export class Boot extends Phaser.State {
         preload() {
+            // only load the resources needed for the 
+            // loading bar.
+
             this.load.image('preloadBar', '../img/loader.png');
         }
 
         create() {
+            // initialise core properties of the game
+
             // number of touch points
             this.input.maxPointers = 1;
 

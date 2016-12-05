@@ -5,14 +5,17 @@
         preloadBar: Phaser.Sprite;
 
         preload() {
+            // use this function to load all the other resources 
+            // we need for the game.
+
             this.preloadBar = this.add.sprite(200, 250, 'preloadBar');
             this.load.setPreloadSprite(this.preloadBar);
 
             this.load.image('titlepage', '../img/titlepage.jpg');
             this.load.image('logo', '../img/logo.png');
             this.load.audio('music', '../img/title.mp3');
-            this.load.spritesheet('simon', '../img/simon.png', 58, 96, 5);
-            this.load.image('level1', '../img/level1.png');
+            this.load.image('player', '../img/01.dodger/player.png');
+            this.load.image('enemy', '../img/01.dodger/enemy.png')
         }
 
         create() {
@@ -21,6 +24,7 @@
         }
 
         startMainMenu() {
+            // hand-off to the main menu
             this.game.state.start('MainMenu', true, false);
         }
     }

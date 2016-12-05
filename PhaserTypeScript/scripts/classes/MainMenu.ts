@@ -15,6 +15,7 @@
             this.add.tween(this.background).to({ alpha: 1 }, 2000, Phaser.Easing.Bounce.InOut, true);
             this.add.tween(this.logo).to({ y: 220 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
 
+            // wire-up mouse click event
             this.input.onDown.addOnce(this.fadeOut, this);
         }
 

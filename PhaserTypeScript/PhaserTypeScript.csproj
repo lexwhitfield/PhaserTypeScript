@@ -23,8 +23,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\app.css" />
-    <Content Include="img\01.dodger\cockpitRed_2.png" />
-    <Content Include="img\01.dodger\cockpitYellow_0.png" />
+    <Content Include="img\01.dodger\player.png" />
+    <Content Include="img\01.dodger\enemy.png" />
     <Content Include="img\level1.png" />
     <Content Include="img\loader.png" />
     <Content Include="img\logo.png" />
@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app.ts" />
+    <TypeScriptCompile Include="scripts\classes\01.dodger\Enemy.ts" />
     <TypeScriptCompile Include="scripts\classes\Boot.ts" />
     <TypeScriptCompile Include="scripts\classes\DodgerLevel.ts" />
     <TypeScriptCompile Include="scripts\classes\Game.ts" />
