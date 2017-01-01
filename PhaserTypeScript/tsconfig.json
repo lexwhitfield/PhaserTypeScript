@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": false,
     "jsx": "react",
-    "module": "amd",
+    //"module": "commonjs",
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "removeComments": false,
