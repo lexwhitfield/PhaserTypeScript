@@ -22,9 +22,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="civ\index.html" />
     <Content Include="css\app.css" />
     <Content Include="img\01.dodger\player.png" />
     <Content Include="img\01.dodger\enemy.png" />
+    <Content Include="img\civ\overworld.png" />
     <Content Include="img\level1.png" />
     <Content Include="img\loader.png" />
     <Content Include="img\logo.png" />
@@ -460,6 +462,7 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="civ\Game.ts" />
     <TypeScriptCompile Include="scripts\app.ts" />
     <TypeScriptCompile Include="scripts\classes\01.dodger\Enemy.ts" />
     <TypeScriptCompile Include="scripts\classes\Boot.ts" />
@@ -550,6 +553,7 @@
     <Content Include="img\tutorials\tilemaps\maps\super_mario.json" />
     <Content Include="img\tutorials\tilemaps\maps\tile_collision_test.json" />
     <Content Include="img\tutorials\tilemaps\maps\tile_properties.json" />
+    <Content Include="img\civ\civ.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

@@ -45,8 +45,7 @@ var Tutorials;
                 if (game.camera.x !== tx || game.camera.y !== ty) {
                     renderMap();
                 }
-                sprite.body.velocity.x = 0;
-                sprite.body.velocity.y = 0;
+                sprite.body.velocity.set(0);
                 if (cursors.up.isDown) {
                     sprite.body.velocity.y = -200;
                     particleBurst();

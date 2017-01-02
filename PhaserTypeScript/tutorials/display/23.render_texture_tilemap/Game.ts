@@ -65,8 +65,7 @@
 
         }
 
-        sprite.body.velocity.x = 0;
-        sprite.body.velocity.y = 0;
+        sprite.body.velocity.set(0);
 
         if (cursors.up.isDown) {
 
