@@ -436,6 +436,7 @@
     <Content Include="tutorials\basics\03.move_an_image\index.html" />
     <Content Include="tutorials\basics\02.click_an_image\index.html" />
     <Content Include="tutorials\basics\01.load_an_image\index.html" />
+    <Content Include="tutorials\box2d\36.tilemap\index.html" />
     <Content Include="tutorials\display\23.render_texture_tilemap\index.html" />
     <Content Include="tutorials\display\22.render_texture_starfield\index.html" />
     <Content Include="tutorials\display\21.render_texture_rotation\index.html" />
@@ -463,6 +464,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="civ\Game.ts" />
+    <TypeScriptCompile Include="civ\SimplexNoise.ts" />
     <TypeScriptCompile Include="scripts\app.ts" />
     <TypeScriptCompile Include="scripts\classes\01.dodger\Enemy.ts" />
     <TypeScriptCompile Include="scripts\classes\Boot.ts" />
@@ -483,6 +485,7 @@
     <TypeScriptCompile Include="scripts\vendor\pixi.d.ts" />
     <TypeScriptCompile Include="scripts\classes\Player.ts" />
     <TypeScriptCompile Include="scripts\classes\Preloader.ts" />
+    <TypeScriptCompile Include="tutorials\box2d\36.tilemap\Game.ts" />
     <TypeScriptCompile Include="tutorials\display\23.render_texture_tilemap\Game.ts" />
     <TypeScriptCompile Include="tutorials\display\22.render_texture_starfield\Game.ts" />
     <TypeScriptCompile Include="tutorials\display\21.render_texture_rotation\Game.ts" />
